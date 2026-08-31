@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About the Author | Lost & Found in Translation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Poppins:wght@300;400;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; }
+        .chinese-text { font-family: 'Noto Sans SC', sans-serif; }
+        .handwritten { font-family: 'Caveat', cursive; }
+        .soft-link,
+        .soft-button,
+        .soft-card {
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+        }
+        .soft-link:hover,
+        .soft-button:hover,
+        .soft-card:hover {
+            transform: translateY(-2px);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(18px);
+            transition: opacity 0.55s ease, transform 0.55s ease;
+        }
+        .reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .soft-link,
+            .soft-button,
+            .soft-card,
+            .reveal {
+                transition: none;
+            }
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <header class="bg-white px-4 py-6 shadow-sm">
+        <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4" aria-label="Primary navigation">
+            <a href="index.html" class="text-lg font-bold text-gray-900">Lost &amp; Found</a>
+            <div class="flex items-center gap-2 text-sm font-semibold">
+                <a href="index.html#collection" class="soft-link px-3 py-2 text-gray-500 hover:text-gray-900">Explore</a>
+                <a href="about.html" class="soft-button rounded-lg bg-gray-100 px-4 py-2 text-gray-800 hover:bg-yellow-100">About Author</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reveal bg-white px-4 py-14 text-center md:py-20">
+            <div class="mx-auto max-w-4xl">
+                <p class="mb-4 text-sm font-bold uppercase tracking-widest text-gray-400">About the creator</p>
+                <h1 class="text-4xl font-bold text-gray-900 md:text-5xl">Created to preserve and share Sámi cultural research.</h1>
+                <p class="mx-auto mt-5 max-w-2xl text-gray-500 md:text-lg">
+                    This digital archive was created by Rachel Zhang, a senior from Basis International School Shenzhen, to preserve traditional Sámi culture and serve as a centralized resource for future scholars.
+                </p>
+            </div>
+        </section>
+
+        <section class="reveal bg-white px-4 py-12">
+            <div class="mx-auto grid max-w-7xl gap-8 md:grid-cols-[0.95fr_1.05fr] md:items-center">
+                <div class="soft-card rounded-lg border-2 border-yellow-200 bg-yellow-50 p-1 shadow-sm">
+                    <img src="images/rachel-zhang.jpg" alt="Rachel Zhang" class="h-[500px] w-full rounded-md bg-gray-100 object-cover object-top">
+                </div>
+                <div class="soft-card rounded-lg bg-white p-8 shadow-sm">
+                    <p class="text-sm font-bold uppercase tracking-widest text-gray-400">About Rachel</p>
+                    <h2 class="mt-3 text-3xl font-bold text-gray-900">A student researcher with roots in Finland</h2>
+                    <p class="mt-5 leading-8 text-gray-600">
+                        Rachel was born in Finland and has developed a deep interest in researching Sámi culture, literature, language, and history. Her connection to Finland helped inspire her curiosity about the Sámi people and the importance of making Sámi research easier to find.
+                    </p>
+                    <p class="mt-4 leading-8 text-gray-600">
+                        She is currently studying in China at Basis International School China. Through this project, Rachel brings together her academic interests, personal background, and commitment to preserving access to Indigenous cultural knowledge.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reveal bg-white px-4 py-14">
+            <div class="soft-card mx-auto max-w-4xl rounded-lg bg-blue-50 p-8 shadow-sm">
+                <p class="text-sm font-bold uppercase tracking-widest text-gray-400">Background</p>
+                <h2 class="mt-3 text-3xl font-bold text-gray-900">Why this project was created</h2>
+                <div class="mt-5 space-y-4 leading-8 text-gray-600">
+                    <p>
+                        During her own academic journey, Rachel encountered numerous challenges in locating scattered resources about the Sámi. Because formal Sámi academia only emerged in the late 20th century, and because the culture's profound history was carried through rich oral traditions rather than written texts prior to the 1900s, vital resources are often difficult to track down.
+                    </p>
+                    <p>
+                        This website is designed to ease that resource-finding barrier. Rachel built it around an author-centric framework that maps the intellectual landscape through 40 pivotal figures, pairing foundational Sámi authors, poets, and activists with key historians and linguists.
+                    </p>
+                    <p>
+                        The database links creators directly to their bibliographies, languages, and archival resources. Through this structured curation, Rachel hopes to honor the voices of Sápmi, streamline the research process, and empower the next generation of Indigenous studies.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white px-4 py-8 text-center text-sm text-gray-500 shadow-sm">
+        <p>Lost &amp; Found in Translation</p>
+        <a href="index.html" class="soft-link mt-2 inline-block font-semibold text-gray-700 hover:text-gray-900">Return to the collection</a>
+    </footer>
+    <script>
+        document.querySelectorAll('.reveal').forEach((element, index) => {
+            element.style.transitionDelay = `${Math.min(index * 80, 240)}ms`;
+            requestAnimationFrame(() => element.classList.add('is-visible'));
+        });
+    </script>
+</body>
+</html>
